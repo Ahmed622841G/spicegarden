@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header, footer { background: #333; color: #fff; padding: 1rem; text-align: center; }
+nav a { color: #fff; margin: 0 10px; text-decoration: none; }
+.hero { background: url('assets/img/hero-dish.jpg') center/cover no-repeat; padding: 5rem; color: #fff; text-align: center; }
+main { padding: 1rem; }
