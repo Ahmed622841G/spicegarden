@@ -3,4 +3,4 @@
   publish = "."
 
 [context.production.environment]
-  NEON_CONNECTION_STRING = psql 'postgresql://neondb_owner:npg_C0ZRMwmPl1yG@ep-soft-boat-aelcs2jg-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+  NEON_CONNECTION_STRING = "psql 'postgresql://neondb_owner:npg_C0ZRMwmPl1yG@ep-soft-boat-aelcs2jg-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require'"
