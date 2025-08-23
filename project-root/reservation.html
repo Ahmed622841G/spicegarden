@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations - Spice Garden</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Make a Reservation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservation.html">Reservations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="reservation-form">
+      <input type="text" name="name" placeholder="Your name" required><br>
+      <input type="tel" name="phone" placeholder="Phone number" required><br>
+      <input type="number" name="party_size" placeholder="Party size" required><br>
+      <input type="date" name="reservation_date" required><br>
+      <input type="time" name="reservation_time" required><br>
+      <textarea name="notes" placeholder="Special requests"></textarea><br>
+      <button type="submit">Reserve</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("reservation-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = Object.fromEntries(new FormData(e.target));
+      const res = await fetch("/.netlify/functions/reservation", {
+        method: "POST",
+        body: JSON.stringify(formData)
+      });
+      const data = await res.json();
+      alert(data.message);
+    });
+  </script>
+</body>
+</html>
